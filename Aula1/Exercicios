@@ -1,12 +1,13 @@
-package aula;
+EXERCICIO 2:
+package exercicios;
 
 import java.util.Scanner;
 
-public class Exercicio1 {
+public class Exercicio2 {
 
     public static void main(String[] args) {
-        Exercicio1 ex1 = new Exercicio1();
-        ex1.exercicio();
+        Exercicio2 ex2 = new Exercicio2();
+        ex2.exercicio();
     }
 
     private void exercicio() {
@@ -44,7 +45,6 @@ public class Exercicio1 {
                     break;
             }
         }
-
         s.close();
     }
 
@@ -84,10 +84,10 @@ public class Exercicio1 {
         }
     }
 
-    private void deletar(String[] nomes, Scanner scanner) {
+    private void deletar(String[] nomes, Scanner s) {
         System.out.println("Índice do nome a ser editado:");
-        int i = scanner.nextInt();
-        scanner.nextLine();
+        int i = s.nextInt();
+        s.nextLine();
         if (i >= 0 && i < nomes.length && nomes[i] != null) {
             nomes[i] = null;
             System.out.println("Nome removido");
@@ -96,3 +96,10 @@ public class Exercicio1 {
         }
     }
 }
+
+=======================================================================================================================
+EXERCICIO 3:
+
+=======================================================================================================================
+EXERCICIO 4:
+
