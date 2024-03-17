@@ -1,5 +1,4 @@
-Exercício 2
-package exercicios;
+Exercicio 2
 
 import java.util.Scanner;
 import java.util.Vector;
@@ -28,36 +27,36 @@ public class A2Ex2 {
                 cadastrar();
                 break;
             case 2:
-                selecionarTodos();
+                selecionar();
                 break;
             case 3:
-                pesquisarPorTermo();
+                pesquisar();
                 break;
             case 4:
-                alterarDados();
+                alterar();
                 break;
             case 5:
-                removerRegistro();
+                remover();
                 break;
             case 0:
-                System.out.println("Saindo do programa. Até mais!");
+                System.out.println("Fim");
                 scanner.close();
                 return;
             default:
-                System.out.println("Opção inválida. Tente novamente.");
+                System.out.println("Opção inválida");
         }
 
         executar();
     }
 
     private void exibirMenu() {
+        System.out.print("Escolha uma opção: ");
         System.out.println("1 - Cadastrar");
         System.out.println("2 - Selecionar todos os registros");
         System.out.println("3 - Pesquisar por termo");
         System.out.println("4 - Alterar dados");
         System.out.println("5 - Remover registro");
         System.out.println("0 - Sair");
-        System.out.print("Escolha uma opção: ");
     }
 
     private void cadastrar() {
@@ -66,15 +65,15 @@ public class A2Ex2 {
 
         if (!registros.contains(novoRegistro)) {
             registros.add(novoRegistro);
-            System.out.println("Registro cadastrado com sucesso!");
+            System.out.println("Registro cadastrado");
         } else {
-            System.out.println("Esse registro já existe. Não é permitido cadastro duplicado.");
+            System.out.println("Esse registro já existe");
         }
     }
 
-    private void selecionarTodos() {
+    private void selecionar() {
         if (registros.isEmpty()) {
-            System.out.println("Não há registros cadastrados.");
+            System.out.println("Não há registros cadastrados");
         } else {
             System.out.println("Registros cadastrados:");
             for (String registro : registros) {
@@ -83,7 +82,7 @@ public class A2Ex2 {
         }
     }
 
-    private void pesquisarPorTermo() {
+    private void pesquisar() {
         System.out.print("Digite o termo de pesquisa: ");
         String termo = scanner.nextLine().toLowerCase();
 
@@ -95,7 +94,7 @@ public class A2Ex2 {
         }
     }
 
-    private void alterarDados() {
+    private void alterar() {
         System.out.print("Digite o registro a ser alterado: ");
         String registroAntigo = scanner.nextLine();
 
@@ -104,22 +103,148 @@ public class A2Ex2 {
             String novoValor = scanner.nextLine();
 
             registros.set(registros.indexOf(registroAntigo), novoValor);
-            System.out.println("Registro alterado com sucesso!");
+            System.out.println("Registro alterado");
         } else {
-            System.out.println("Registro não encontrado. Não é possível realizar a alteração.");
+            System.out.println("Registro não encontrado");
         }
     }
 
-    private void removerRegistro() {
+    private void remover() {
         System.out.print("Digite o registro a ser removido: ");
         String registroRemover = scanner.nextLine();
 
         if (registros.contains(registroRemover)) {
             registros.remove(registroRemover);
-            System.out.println("Registro removido com sucesso!");
+            System.out.println("Registro removido");
         } else {
-            System.out.println("Registro não encontrado. Não é possível realizar a remoção.");
+            System.out.println("Registro não encontrado");
         }
     }
 }
 
+Exercicio 3
+
+import java.util.LinkedList;
+import java.util.Scanner;
+
+public class A2Ex3 {
+    LinkedList<String> lista = new LinkedList<>();
+    Scanner s = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        A2Ex3 estruturadenos = new A2Ex3();
+        estruturadenos.executar();
+    }
+
+    public void executar() {
+        boolean sair = false;
+
+        while (!sair) {
+            System.out.println("Escolha uma opção:");
+            System.out.println("1- Cadastrar nome");
+            System.out.println("2- Listar nomes");
+            System.out.println("3- Finalizar");
+
+            int opcao = s.nextInt();
+            s.nextLine(); 
+
+            switch (opcao) {
+                case 1:
+                    cadastrar();
+                    break;
+                case 2:
+                    listar();
+                    break;
+                case 3:
+                    sair = true;
+                    System.out.println("Fim");
+                    break;
+                default:
+                    System.out.println("Opção inválida");
+            }
+        }
+    }
+
+    public void cadastrar() {
+        System.out.println("Digite o nome que deseja cadastrar:");
+        String nome = s.nextLine();
+
+        lista.add(nome);
+        System.out.println("Nome cadastrado");
+    }
+
+    public void listar() {
+        if (lista.isEmpty()) {
+            System.out.println("Lista vazia");
+        } else {
+            System.out.println("Nomes na lista:");
+            for (String nome : lista) {
+                System.out.println(nome);
+            }
+        }
+    }
+}
+
+Exercicio 4
+import java.util.LinkedList;
+import java.util.Scanner;
+
+public class A2Ex4 {
+    LinkedList<String> lista = new LinkedList<>();
+    Scanner s = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        A2Ex4 nos = new A2Ex4();
+        nos.executar();
+    }
+
+    public void executar() {
+        boolean sair = false;
+
+        while (!sair) {
+            System.out.println("Escolha uma opção:");
+            System.out.println("1- Cadastrar nome");
+            System.out.println("2- Listar nomes");
+            System.out.println("3- Finalizar");
+
+            int opcao = s.nextInt();
+            s.nextLine(); 
+
+            switch (opcao) {
+                case 1:
+                    cadastrar();
+                    break;
+                case 2:
+                    listar();
+                    break;
+                case 3:
+                    sair = true;
+                    System.out.println("Fim");
+                    break;
+                default:
+                    System.out.println("Opção inválida");
+            }
+        }
+    }
+
+    public void cadastrar() {
+        System.out.println("Digite o nome que deseja cadastrar:");
+        String nome = s.nextLine();
+
+        lista.add(nome);
+        System.out.println("Nome cadastrado");
+    }
+
+    public void listar() {
+        if (lista.isEmpty()) {
+            System.out.println("Lista vazia");
+        } else {
+            System.out.println("Nomes na lista:");
+            for (String nome : lista) {
+                System.out.println(nome);
+            }
+        }
+    }
+}
+
+Exercicio 5
