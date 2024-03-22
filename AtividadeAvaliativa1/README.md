@@ -1,1 +1,1 @@
-
+Nessa atividade avaliativa optei pela utilização da estrutura linkedlist pois esta permite o armazenazenamento de elementos em uma sequência de nós, onde cada nó tem uma referência para o próximo nó na lista. A linkedlist oferece operações como "addFirst();" e "removeFirst();" que cumprem com a exigência de exclusão de tarefas da lista conforme são concluídas.
